@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="ejemplo2">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,8 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../recursos/css/bootstrap.min.css">
+    <script src="../recursos/js/angular.min.js"></script>
+    <script src="../recursos/js/profesoresController.js"></script>
 </head>
-<body>
+<body ng-controller="profesoresController">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -74,25 +76,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Ingles</td>
-                            <td>Basico</td>
-                            <td>Aula A</td>
-                            <td>Lunes 9:00-11:00</td>
-                            <td><a href="grupo-alumnos.html">Ver lista</a></td>
-                        </tr>
-                        <tr>
-                            <td>Ingles</td>
-                            <td>Medio</td>
-                            <td>Aula B</td>
-                            <td>Martes 9:00-11:00</td>
-                            <td><a href="grupo-alumnos.html">Ver lista</a></td>
-                        </tr>
-                        <tr>
-                            <td>Ingles</td>
-                            <td>Avanzado</td>
-                            <td>Aula C</td>
-                            <td>Miercoles 9:00-11:00</td>
+                        <tr ng-repeat="dato in profesores">
+                            <td>{{dato.idioma}}</td>
+                            <td>{{dato.nivel}}</td>
+                            <td>{{dato.aula}}</td>
+                            <td>{{dato.hora}}</td>
                             <td><a href="grupo-alumnos.html">Ver lista</a></td>
                         </tr>
 

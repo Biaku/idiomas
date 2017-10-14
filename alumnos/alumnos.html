@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="ejemplo">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,8 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../recursos/css/bootstrap.min.css">
+    <script src="../recursos/js/angular.min.js"></script>
+    <script src="../recursos/js/alumnosController.js"></script>
 </head>
-<body>
+<body ng-controller="alumnosController">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,7 +58,7 @@
                              alt="Generic placeholder image">
                         <div class="media-body">
                             <h5 class="mt-0">Datos</h5>
-                            <p>AGUSTIN ITURBIDE 1003  TAMULTE C.P. 86150 CEN</p>
+                            <p>AGUSTIN ITURBIDE 1003 TAMULTE C.P. 86150 CEN</p>
                             <p>9935124899</p>
                             <p>HUGOALONSOHERNANDEZGARCIA@hotmail.com</p>
                         </div>
@@ -73,19 +75,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Ingles basico </td>
-                            <td>SAHARA RAQUEL RINCON DE LA CRUZ</td>
-                            <td>15%</td>
-                            <td>Aula A</td>
-                            <td>Lunes 9:00-11:00</td>
-                        </tr>
-                        <tr>
-                            <td>Ingles Medio </td>
-                            <td>SAHARA RAQUEL RINCON DE LA CRUZ</td>
-                            <td>10%</td>
-                            <td>Aula B</td>
-                            <td>Martes 9:00-11:00</td>
+                        <tr ng-repeat="alumno in alumnos">
+                            <td>{{ alumno.curso }}</td>
+                            <td>{{ alumno.profesor }}</td>
+                            <td>{{ alumno.porcentaje }}</td>
+                            <td>{{ alumno.aula }}</td>
+                            <td>{{ alumno.hora }}</td>
                         </tr>
                         </tbody>
                     </table>

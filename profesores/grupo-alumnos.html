@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="ejemplo3">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,8 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../recursos/css/bootstrap.min.css">
+    <script src="../recursos/js/angular.min.js"></script>
+    <script src="../recursos/js/grupoAlumnosController.js"></script>
 </head>
-<body>
+<body ng-controller="alumnosGController">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -65,26 +67,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>HERNANDEZ </td>
-                            <td>RAMOS</td>
-                            <td>JUAN CARLOS</td>
-                            <td>12345A</td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>PEREZ</td>
-                            <td>CORDOVA</td>
-                            <td>SAUL </td>
-                            <td>12345B</td>
-                            <td>20%</td>
-                        </tr>
-                        <tr>
-                            <td>LANDERO </td>
-                            <td>BAÑOS</td>
-                            <td>JOSE GUADALUPE</td>
-                            <td>12345C</td>
-                            <td>5%</td>
+                        <tr ng-repeat="dato in alumnosg">
+                            <td>{{dato.paterno}}</td>
+                            <td>{{dato.materno}}</td>
+                            <td>{{dato.nombre}}</td>
+                            <td>{{dato.matricula}}</td>
+                            <td>{{dato.porcentaje}}</td>
                         </tr>
 
                         </tbody>

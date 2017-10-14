@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="ejemplo4">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,8 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
+    <script src="recursos/js/angular.min.js"></script>
+    <script src="recursos/js/cursosController.js"></script>
 </head>
-<body>
+<body ng-controller="cursosController">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -63,56 +65,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Ingles basico</td>
-                            <td>10</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Ingles Medio</td>
-                            <td>10</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Ingles Avanzado</td>
-                            <td>10</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Aleman basico</td>
-                            <td>5</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Aleman Medio</td>
-                            <td>5</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Aleman Avanzado</td>
-                            <td>5</td>
-                            <td>Abierto</td>
-                        </tr>
-
-                        <tr>
-                            <td>Japones basico</td>
-                            <td>5</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Ruso basico</td>
-                            <td>5</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Frances basico</td>
-                            <td>10</td>
-                            <td>Abierto</td>
-                        </tr>
-                        <tr>
-                            <td>Frances medio</td>
-                            <td>10</td>
-                            <td>Abierto</td>
+                        <tr ng-repeat="dato in cursos">
+                            <td>{{dato.descripcion}}</td>
+                            <td>{{dato.capacidad}}</td>
+                            <td>{{dato.estatus}}</td>
                         </tr>
 
                         </tbody>
