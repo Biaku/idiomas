@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="ejemplo3">
+<html lang="es" ng-app="ejemplo4">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../recursos/css/bootstrap.min.css">
     <script src="../recursos/js/angular.min.js"></script>
-    <script src="../recursos/js/grupoAlumnosController.js"></script>
+    <script src="../recursos/js/editarController.js"></script>
 </head>
-<body ng-controller="alumnosGController">
+<body ng-controller="alumnoC">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -51,34 +51,40 @@
 </nav>
 <br>
 <div class="container">
+    <script>
+        id = getParameterByName("id");
+        document.write("<h4>Registro: " + id + "</h4>");
+        //edit(id);
+
+    </script>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4>Alumnos del grupo</h4>
-                    <table class="table table-bordered table-hover">
-                        <thead class="thead-default">
-                        <tr>
-                            <th>Paterno</th>
-                            <th>Materno</th>
-                            <th>Nombre</th>
-                            <th>Matricula</th>
-                            <th>Porcentaje</th>
-                            <th>Opciones</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="dato in alumnosg">
-                            <td>{{dato.paterno}}</td>
-                            <td>{{dato.materno}}</td>
-                            <td>{{dato.nombre}}</td>
-                            <td>{{dato.matricula}}</td>
-                            <td>{{dato.porcentaje}}</td>
-                            <td><a href="editar.html?id={{dato.id}}">editar</a></td>
-                        </tr>
+                    <h4>Editgar</h4>
+                    <form action="">
+                        <div class="form-group">
+                            <label>Paterno</label>
+                            <input type="text" ng-model="paterno" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Materno</label>
+                            <input type="text" ng-model="materno" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" ng-model="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Matricula</label>
+                            <input type="text" ng-model="matricula" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Porcentaje</label>
+                            <input type="text" ng-model="porcentaje" class="form-control">
+                        </div>
 
-                        </tbody>
-                    </table>
+                    </form>
                 </div>
             </div>
         </div>
