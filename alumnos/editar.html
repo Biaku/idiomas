@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="ejemplo">
+<html lang="es" ng-app="ejemplo5">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../recursos/css/bootstrap.min.css">
     <script src="../recursos/js/angular.min.js"></script>
-    <script src="../recursos/js/alumnosController.js"></script>
+    <script src="../recursos/js/editarAController.js"></script>
 </head>
-<body ng-controller="alumnosController">
+<body ng-controller="ealumnoC">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Instituto de idomas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,65 +29,62 @@
             <li class="nav-item">
                 <a class="nav-link" href="../contacto.html">Contacto</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login.html">Registro</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Panel de control
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="alumnos.html">Alumnos</a>
-                    <a class="dropdown-item" href="../profesores/profesores.html">Profesores</a>
+                    <a class="dropdown-item" href="../alumnos/alumnos.html">Alumnos</a>
+                    <a class="dropdown-item" href="profesores.html">Profesores</a>
                     <a class="dropdown-item" href="../cursos.html">Cursos</a>
                 </div>
             </li>
         </ul>
-        <span class="navbar-text">Bienvenido usuario</span>
-        <a href="../index.html" class="btn btn-danger">Salir</a>
     </div>
 </nav>
 <br>
 <div class="container">
+    <script>
+        id = getParameterByName("id");
+        document.write("<h4>Registro: " + id + "</h4>");
+        //edit(id);
+
+    </script>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h1>Alumno: HUGO ALONSO HERNANDEZ GARCIA</h1>
-                    <div class="media">
-                        <img class="d-flex mr-3"
-                             src="https://image.freepik.com/iconos-gratis/nerd-perfil-masculino-avatar_318-68813.jpg"
-                             alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h5 class="mt-0">Datos</h5>
-                            <p>AGUSTIN ITURBIDE 1003 TAMULTE C.P. 86150 CEN</p>
-                            <p>9935124899</p>
-                            <p>HUGOALONSOHERNANDEZGARCIA@hotmail.com</p>
+                    <h4>Editgar</h4>
+                    <form action="">
+                        <div class="form-group">
+                            <label>curso</label>
+                            <input type="text" ng-model="curso" class="form-control">
                         </div>
-                    </div>
-                    <hr>
-                    <table class="table table-bordered table-hover">
-                        <thead class="thead-default">
-                        <tr>
-                            <th>Curso</th>
-                            <th>Profesor</th>
-                            <th>Porcentaje</th>
-                            <th>Aula</th>
-                            <th>Hora</th>
-                            <th>Opcion</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="alumno in alumnos">
-                            <td>{{ alumno.curso }}</td>
-                            <td>{{ alumno.profesor }}</td>
-                            <td>{{ alumno.porcentaje }}</td>
-                            <td>{{ alumno.aula }}</td>
-                            <td>{{ alumno.hora }}</td>
-                            <td><a href="editar.html?id={{alumno.id}}">editar</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <a href="../construccion.html" class="btn btn-primary">Agregar curso</a>
-                    <a href="../construccion.html" class="btn btn-primary">Calificaciones</a>
+                        <div class="form-group">
+                            <label>profesor</label>
+                            <input type="text" ng-model="profesor" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>porcentaje</label>
+                            <input type="text" ng-model="porcentaje" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>aula</label>
+                            <input type="text" ng-model="aula" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>hora</label>
+                            <input type="text" ng-model="hora" class="form-control">
+                        </div>
+                        <input type="submit" class="btn btn-primary">
+                    </form>
                 </div>
             </div>
         </div>
