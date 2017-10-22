@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "capacidad": "10",
+    "estatus": "Abierto",
+    "descripcion": "Ingles basico",
+    "idioma": "Ingles"
+  },
+  {
+    "id": 2,
+    "capacidad": "10",
+    "estatus": "Abierto",
+    "descripcion": "Ingles medio",
+    "idioma": "Ingles"
+  },
+  {
+    "id": 3,
+    "capacidad": "10",
+    "estatus": "Abierto",
+    "descripcion": "Ingles avanzado",
+    "idioma": "Ingles"
+  }
+]

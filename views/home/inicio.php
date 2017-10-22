@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-</head>
+<?php include $templates_header ?>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Instituto de idomas</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Acerca de nosotros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Registro</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<?php include $templates_navbar ?>
 <br>
 <div class="container">
     <div class="row">
@@ -59,7 +23,7 @@
                     <h4 class="card-title">Alumnos</h4>
                     <p class="card-text">Información de servicios y tramites para alumnos inscritos en nuestro
                         instituto</p>
-                    <a href="login.html" class="btn btn-primary">Mas informacion</a>
+                    <a href="?page=login" class="btn btn-primary">Mas informacion</a>
                 </div>
             </div>
         </div>
@@ -70,7 +34,7 @@
                     <h4 class="card-title">Profesores</h4>
                     <p class="card-text">Conoce a nuestro personal docente, profesionales aptos y altamente capacitados
                         en el proceso de enseñaza aprendizaje de idiomas</p>
-                    <a href="login.html" class="btn btn-primary">Mas informacion</a>
+                    <a href="?page=login" class="btn btn-primary">Mas informacion</a>
                 </div>
             </div>
         </div>
@@ -82,7 +46,7 @@
                     <h4 class="card-title">Idiomas & Cursos</h4>
                     <p class="card-text">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget
                         quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus</p>
-                    <a href="cursos_2.html" class="btn btn-primary">Mas informacion</a>
+                    <a href="?page=cursos" class="btn btn-primary">Mas informacion</a>
                 </div>
             </div>
         </div>

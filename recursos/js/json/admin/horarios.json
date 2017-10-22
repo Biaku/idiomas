@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lunes 9:00-11:00"
+  },
+  {
+    "id": 2,
+    "nombre": "Martes 9:00-11:00"
+  },
+  {
+    "id": 3,
+    "nombre": "Miercoles 9:00-11:00"
+  }
+]

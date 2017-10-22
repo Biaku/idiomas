@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
-</head>
+<?php include $templates_navbar ?>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Instituto de idomas</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Acerca de nosotros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Registro</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<?php include $templates_header ?>
 <br>
 <div class="container">
     <div class="row">
@@ -58,7 +23,7 @@
                                 Recordarme
                             </label>
                         </div>
-                        <a href="alumnos/alumnos.html" class="btn btn-primary">Acceder</a>
+                        <a href="?page=cpalumno" class="btn btn-primary">Acceder</a>
                     </form>
                 </div>
             </div>
@@ -80,7 +45,7 @@
                             <label>Correo electronico</label>
                             <input type="email" class="form-control" >
                         </div>
-                        <a href="alumnos/alumnos.html" class="btn btn-primary">Registrarse</a>
+                        <a href="?page=cpprofesor" class="btn btn-primary">Registrarse</a>
                     </form>
                 </div>
             </div>
