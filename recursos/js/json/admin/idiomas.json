@@ -10,5 +10,13 @@
   {
     "id": 3,
     "nombre": "Japones"
+  },
+  {
+    "id": 4,
+    "nombre": "Francés"
+  },
+  {
+    "id": 5,
+    "nombre": "Italiano"
   }
 ]
