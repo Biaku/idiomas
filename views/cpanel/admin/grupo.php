@@ -22,8 +22,9 @@
                                 <td>{{grupo.id}}</td>
                                 <td>{{grupo.nombre}}</td>
                                 <td>
-                                    <a href="#">Borrar</a>
-                                    <a href="?page=adm-grupo-editar&id={{grupo.id}}">Editar</a>
+                                <a href="#">Lista</a>
+                                <a href="#">Borrar</a>
+                                <a href="?page=adm-grupo-editar&id={{grupo.id}}">Editar</a> 
                                 </td>
                             </tr>
                             </tbody>
