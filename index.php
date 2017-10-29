@@ -39,6 +39,15 @@ if (isset($_GET["page"])) {
         case 'adm-grupo-editar':
             include 'views/cpanel/admin/grupo_editar.php';
             break;
+        case 'adm-grupo-a':
+            include 'views/cpanel/admin/grupo_a.php';
+            break;
+        case 'adm-grupo-b':
+            include 'views/cpanel/admin/grupo_b.php';
+            break;
+        case 'adm-grupo-c':
+            include 'views/cpanel/admin/grupo_c.php';
+            break;
         case 'adm-horario':
             include 'views/cpanel/admin/horario.php';
             break;

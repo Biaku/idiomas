@@ -1,5 +1,5 @@
 <?php include $templates_header ?>
-    <body ng-app="admin" ng-controller="grupoController">
+    <body>
 <?php include $templates_navbar_adm ?>
     <br>
     <div class="container">
@@ -7,25 +7,24 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5>Grupo</h5>
+                        <h5>Grupo B - Alumnos</h5>
 
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Nombre</th>
-                                <th>Acciones</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="grupo in grupos">
-                                <td>{{grupo.id}}</td>
-                                <td>{{grupo.nombre}}</td>
-                                <td>
-                                <a href="?page={{grupo.lista}}">Lista</a>
-                                <a href="#">Borrar</a>
-                                <a href="?page=adm-grupo-editar&id={{grupo.id}}">Editar</a> 
-                                </td>
+                            <tr>
+                                <td>1</td>
+                                <td>Baldemar Jimenez Lopez</td>
+                                <td>27 DE FEBRERO S/N 102 CENTRO C.P. 86800 TEAPA</td>
+                                <td>9935124886</td>
+
                             </tr>
                             </tbody>
                         </table>

@@ -1,14 +1,17 @@
 [
   {
     "id": 1,
-    "nombre": "Grupo A"
+    "nombre": "Grupo A",
+    "lista":"adm-grupo-a"
   },
   {
     "id": 2,
-    "nombre": "Grupo B"
+    "nombre": "Grupo B",
+    "lista":"adm-grupo-b"
   },
   {
     "id": 3,
-    "nombre": "Grupo C"
+    "nombre": "Grupo C",
+    "lista":"adm-grupo-c"
   }
 ]
