@@ -31,6 +31,7 @@
                 </div>
             </div>
         </div>
+        <a href="profesor.php">Ver profesor</a>
     </div>
 
 <?php include $templates_footer_adm ?>

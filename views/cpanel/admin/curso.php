@@ -1,7 +1,7 @@
 <?php include $templates_header ?>
     <body ng-app="admin" ng-controller="cursoController">
-    <script src="recursos\js\vendor\chartjs/Chart.bundle.js"></script>
-    <script src="recursos\js\vendor\chartjs\samples/utils.js"></script>
+    <script src="recursos\vendor\chartjs/Chart.bundle.js"></script>
+    <script src="recursos\vendor\chartjs\samples/utils.js"></script>
 <?php include $templates_navbar_adm ?>
     <br>
     <div class="container">

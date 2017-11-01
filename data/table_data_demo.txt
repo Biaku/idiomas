@@ -1,0 +1,5 @@
+0700-0900;Inglés;Básico;A32
+0900-1100;Inglés;Intermedio;A32
+1100-1300;Inglés;Avanzado;A32
+1300-1500;Inglés;Básico;A32
+1500-1700;Inglés;Intermedio;A32
