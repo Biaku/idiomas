@@ -28,8 +28,10 @@
                                     echo "<tr>";
                                     echo "<td>$row[id]</td>";
                                     echo "<td>$row[nombre]</td>";
-                                    echo "<td><a href='?page=adm-aula-editar&id=$row[id]'>Editar</a></td>";
-                                    echo "<td><a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a></td>";
+                                    echo "<td>
+                                            <a href='?page=adm-aula-editar&id=$row[id]'>Editar</a>
+                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                          </td>";
                                     echo "</tr>";
                                 }
 
