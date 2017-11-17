@@ -1,3 +1,4 @@
+<?php require_once 'controllers/admin/aulaController.php' ?>
 <?php include $templates_header ?>
     <body ng-app="admin">
 <?php include $templates_navbar_adm ?>
@@ -22,12 +23,17 @@
                             </thead>
                             <tbody>
                             <tr ng-repeat="aula in aulas">
-                                <td>{{ aula.id }}</td>
-                                <td>{{aula.nombre}}</td>
-                                <td>
-                                    <a href="#">Borrar</a>
-                                    <a href="?page=adm-aula-editar&id={{aula.id}}">Editar</a>
-                                </td>
+                                <?php
+                                foreach ($query as $row) {
+                                    echo "<tr>";
+                                    echo "<td>$row[id]</td>";
+                                    echo "<td>$row[nombre]</td>";
+                                    echo "<td><a href='?page=adm-aula-editar&id=$row[id]'>Editar</a></td>";
+                                    echo "<td><a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a></td>";
+                                    echo "</tr>";
+                                }
+
+                                ?>
                             </tr>
                             </tbody>
                         </table>
@@ -47,16 +53,44 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="controllers/admin/aulaController.php" method="post" id="form">
                             <div class="form-group">
                                 <label>Descripcion</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="desc">
+                                <input type="hidden" name="tipo" value="registro">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Aceptar</button>
+                        <button type="submit" class="btn btn-primary" form="form">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- borrar -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Borrar Aula</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="controllers/admin/aulaController.php" method="post" id="form2">
+                            <div class="form-group">
+                                <h3 class="text-danger">¿Estas seguro de borrar esta aula?</h3>
+                                <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                                <input type="hidden" name="tipo" value="borrar">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger" form="form2">Aceptar</button>
                     </div>
                 </div>
             </div>
