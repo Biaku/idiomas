@@ -22,21 +22,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="aula in aulas">
-                                <?php
-                                foreach ($query as $row) {
-                                    echo "<tr>";
-                                    echo "<td>$row[id]</td>";
-                                    echo "<td>$row[nombre]</td>";
-                                    echo "<td>
+                            <?php
+                            foreach ($query as $row) {
+                                echo "<tr>";
+                                echo "<td>$row[id]</td>";
+                                echo "<td>$row[nombre]</td>";
+                                echo "<td>
                                             <a href='?page=adm-aula-editar&id=$row[id]'>Editar</a>
                                             <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
                                           </td>";
-                                    echo "</tr>";
-                                }
+                                echo "</tr>";
+                            }
 
-                                ?>
-                            </tr>
+                            ?>
                             </tbody>
                         </table>
                     </div>
