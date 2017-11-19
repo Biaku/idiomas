@@ -51,6 +51,7 @@
             </div>
         </div>
     </div>
+    <!-- crear -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -66,8 +67,12 @@
                         <div class="form-group">
                             <label>Capacidad</label>
                             <input type="text" class="form-control" name="capacidad">
-                            <label>Descripcion</label>
-                            <input type="text" class="form-control" name="desc">
+                            <label>Nivel</label>
+                            <select name="desc" id="" class="form-control">
+                                <option value="basico">basico</option>
+                                <option value="medio">medio</option>
+                                <option value="avanzado">avanzado</option>
+                            </select>
                             <label>Idioma</label>
                             <select name="idioma" class="form-control">
                                 <?php
@@ -78,12 +83,11 @@
                                 ?>
                             </select>
                             <br>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="estatus" checked>
-                                    ¿Abierto?
-                                </label>
-                            </div>
+                            <label for="">Estatus</label>
+                            <select name="estatus" id="" class="form-control">
+                                <option value="0">cerrado</option>
+                                <option value="1">abierto</option>
+                            </select>
                             <input type="hidden" name="tipo" value="registro">
                         </div>
                     </form>

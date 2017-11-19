@@ -6,5 +6,11 @@
         crossorigin="anonymous"></script>
 <script src=<?php echo $recursos_bs_js ?>></script>
 <script src="recursos/js/angular_controllers/admin_controller.js"></script>
+<script>
+    $(".linkborrar").click(function () {
+        var id = $(this).attr('href');
+        $("#inpborrar").val(id)
+    });
+</script>
 </body>
 </html>
