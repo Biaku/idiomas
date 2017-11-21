@@ -25,6 +25,7 @@
                         </div>
                         <a href="?page=cpalumno" class="btn btn-primary">Acceder</a>
                     </form>
+                    <a href="?page=adm-inicio">Entrar al Administrador</a>
                 </div>
             </div>
         </div>
