@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-right">
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">nuevo
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo
                     </button>
                 </div>
                 <div class="card-body">
@@ -22,8 +22,8 @@
                             <th>ID</th>
                             <th>Capacidad</th>
                             <th>Estatus</th>
-                            <th>Descripcion</th>
-                            <th>Idioma</th>
+                            <th>Iidioma</th>
+                            <th>Nivel</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
@@ -34,8 +34,8 @@
                             echo "<td>$row[id]</td>";
                             echo "<td>$row[capacidad]</td>";
                             echo "<td>$row[esta_abierto]</td>";
-                            echo "<td>$row[descripcion]</td>";
-                            echo "<td>$row[nombre]</td>";
+                            echo "<td>$row[nombre_idioma]</td>";
+                            echo "<td>$row[nombre_nivel]</td>";
                             echo "<td>
                                             <a href='?page=adm-curso-editar&id=$row[id]'>Editar</a>
                                             <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
@@ -69,9 +69,12 @@
                             <input type="text" class="form-control" name="capacidad">
                             <label>Nivel</label>
                             <select name="desc" id="" class="form-control">
-                                <option value="basico">basico</option>
-                                <option value="medio">medio</option>
-                                <option value="avanzado">avanzado</option>
+                                <?php
+                                foreach ($niveles as $row) {
+                                    echo "<option value='$row[id]'>$row[nombre]</option>";
+                                }
+
+                                ?>
                             </select>
                             <label>Idioma</label>
                             <select name="idioma" class="form-control">

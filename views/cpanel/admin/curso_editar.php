@@ -15,10 +15,6 @@
                                 <input type="text" class="form-control" value="<?= $res->capacidad ?>" name="capacidad">
                             </div>
                             <div class="form-group">
-                                <label>Descripcion</label>
-                                <input type="text" class="form-control" value="<?= $res->descripcion ?>" name="desc">
-                            </div>
-                            <div class="form-group">
                                 <label>Idioma</label>
                                 <select name="idioma" id="" class="form-control">
                                     <?php
@@ -31,6 +27,21 @@
 
                                     }
                                     ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Nivel</label>
+                                <select name="desc" class="form-control">
+                                <?php
+                                foreach ($niveles as $row) {
+                                    if ($res->id_nivel == $row['id']) {
+                                        echo "<option value='$row[id]' selected>$row[nombre]</option>";
+                                    } else {
+                                        echo "<option value='$row[id]'>$row[nombre]</option>";
+                                    }
+
+                                }
+                                ?>
                                 </select>
                             </div>
                             <div class="form-check">
