@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header text-right">
-                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">nueva
+                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Nueva
                         </button>
                     </div>
                     <div class="card-body">
