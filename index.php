@@ -60,6 +60,12 @@ if (isset($_GET["page"])) {
         case 'adm-idioma-editar':
             include 'views/cpanel/admin/idioma_editar.php';
             break;
+        case 'adm-usuario':
+            include 'views/cpanel/admin/usuario.php';
+            break;
+        case 'adm-tipo-usuario':
+            include 'views/cpanel/admin/tipo_usuario.php';
+            break;
     }
 } else {
     include 'views/home/inicio.php';
