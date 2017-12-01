@@ -24,6 +24,20 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            foreach ($usuarios as $row) {
+                                echo "<tr>";
+                                echo "<td>$row[id]</td>";
+                                echo "<td>$row[nombre]</td>";
+                                echo "<td>$row[apellidos]</td>";
+                                echo "<td>$row[tipo]</td>";
+                                echo "<td>
+                                            <a href='?page=adm-tipo-usuario-editar&id=$row[id]'>Editar</a>
+                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                          </td>";
+                                echo "</tr>";
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -45,36 +59,40 @@
                         <form action="controllers/admin/usuarioController.php" method="post" id="form">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" name="desc">
+                                <input type="text" class="form-control" name="nombre">
 
                             </div>
                             <div class="form-group">
                                 <label>Apellidos</label>
-                                <input type="text" class="form-control" name="desc">
+                                <input type="text" class="form-control" name="apellidos">
 
                             </div>
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="email" class="form-control" name="desc">
+                                <input type="email" class="form-control" name="correo">
 
                             </div>
                             <div class="form-group">
                                 <label>Contraseña</label>
-                                <input type="password" class="form-control" name="desc">
+                                <input type="password" class="form-control" name="pass">
                             </div>
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input type="tel" class="form-control" name="desc">
+                                <input type="tel" class="form-control" name="tel">
                             </div>
                             <div class="form-group">
                                 <label>Domicilio</label>
-                                <input type="text" class="form-control" name="desc">
+                                <input type="text" class="form-control" name="domicilio">
                             </div>
 
                             <div class="form-group">
                                 <label>Tipo de usuario</label>
                                 <select name="tipo_usuario" class="form-control">
-
+                                    <?php
+                                    foreach ($tipo_alum as $row) {
+                                        echo "<option value='$row[id]'>$row[tipo]</option>";
+                                    }
+                                    ?>
                                 </select>
 
                             </div>

@@ -8,14 +8,14 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="card-title">Iniciar sesion</h1>
-                    <form>
+                    <form action="controllers/admin/loginController.php" method="post">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Usuario</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label>Contraseña</label>
+                            <input type="password" class="form-control" name="pass" required>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
@@ -23,9 +23,8 @@
                                 Recordarme
                             </label>
                         </div>
-                        <a href="?page=cpalumno" class="btn btn-primary">Acceder</a>
+                        <input type="submit" class="btn btn-primary" value="Aceptar">
                     </form>
-                    <a href="?page=adm-inicio">Entrar al Administrador</a>
                 </div>
             </div>
         </div>

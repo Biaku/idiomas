@@ -36,6 +36,6 @@
             </li>
         </ul>
         <span class="navbar-text">Bienvenido Administrador</span>
-        <a href="index.php" class="btn btn-danger ml-2">Salir</a>
+        <a href="controllers/admin/logoutController.php" class="btn btn-danger ml-2">Salir</a>
     </div>
 </nav>

@@ -1,4 +1,4 @@
-<?php require_once 'controllers/admin/usuarioController.php' ?>
+<?php require_once 'controllers/admin/usuarioTipoController.php' ?>
 <?php include $templates_header ?>
     <body>
 <?php include $templates_navbar_adm ?>
@@ -18,9 +18,23 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tipo</th>
+                                <td>Accciones</td>
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            foreach ($query as $row) {
+                                echo "<tr>";
+                                echo "<td>$row[id]</td>";
+                                echo "<td>$row[tipo]</td>";
+                                echo "<td>
+                                            <a href='?page=adm-tipo-usuario-editar&id=$row[id]'>Editar</a>
+                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                          </td>";
+                                echo "</tr>";
+                            }
+
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -39,15 +53,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="controllers/admin/usuarioController.php" method="post" id="form">
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" name="desc">
-
-                            </div>
+                        <form action="controllers/admin/usuarioTipoController.php" method="post" id="form">
                             <div class="form-group">
                                 <label>Tipo</label>
-                                <input type="text" class="form-control" name="desc">
+                                <input type="text" class="form-control" name="nombre">
                             </div>
                             <input type="hidden" name="tipo" value="registro">
                         </form>
