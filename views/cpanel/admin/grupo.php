@@ -17,8 +17,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Clave</th>
+                                <th>ID</th>                                
                                 <th>Aula</th>
                                 <th>Curso</th>
                                 <th>Maestro</th>
@@ -29,7 +28,6 @@
                             foreach ($grupos as $row) {
                                 echo "<tr>";
                                 echo "<td>$row[idg]</td>";
-                                echo "<td>$row[clave]</td>";
                                 echo "<td>$row[aula]</td>";
                                 echo "<td>$row[curso_idioma] $row[curso]</td>";
                                 echo "<td>$row[maestro] $row[maestro_ap]</td>";
@@ -52,7 +50,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo curso</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo Grupo</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -60,9 +58,7 @@
                     <div class="modal-body">
                         <form action="controllers/admin/grupoController.php" method="post" id="form">
                             <div class="form-group">
-                                <label>Clave</label>
-                                <input type="text" class="form-control" name="clave">
-                                <label>Aula</label>
+                                 <label>Aula</label>
                                 <select name="aula" id="" class="form-control">
                                     <?php
                                     foreach ($aulas as $row) {
