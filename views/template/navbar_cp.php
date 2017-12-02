@@ -23,6 +23,6 @@
             </li>
         </ul>
         <span class="navbar-text">Bienvenido usuario</span>
-        <a href="../index.html" class="btn btn-danger">Salir</a>
+        <a href="controllers/admin/logoutController.php" class="btn btn-danger">Salir</a>
     </div>
 </nav>

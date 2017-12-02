@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php include $templates_header_cp ?>
 <body ng-controller="alumnosController">
 <?php include $templates_navbar_cp ?>
@@ -7,16 +8,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h1>Alumno: HUGO ALONSO HERNANDEZ GARCIA</h1>
+                    <h1>Alumno: <?= $_SESSION['usuario']->nombre ." ". $_SESSION['usuario']->apellidos ?></h1>
                     <div class="media">
                         <img class="d-flex mr-3"
                              src="https://image.freepik.com/iconos-gratis/nerd-perfil-masculino-avatar_318-68813.jpg"
                              alt="Generic placeholder image">
                         <div class="media-body">
                             <h5 class="mt-0">Datos</h5>
-                            <p>AGUSTIN ITURBIDE 1003 TAMULTE C.P. 86150 CEN</p>
-                            <p>9935124899</p>
-                            <p>HUGOALONSOHERNANDEZGARCIA@hotmail.com</p>
+                            <p><?= $_SESSION['usuario']->domicilio ?></p>
+                            <p><?= $_SESSION['usuario']->telefono ?></p>
+                            <p><?= $_SESSION['usuario']->correo ?></p>
                         </div>
                     </div>
                     <hr>

@@ -14,7 +14,7 @@ try {
     var_dump($_SESSION['usuario']);
 
     if ($usuario->tipo_usuario_id == 1) {
-        echo "hola alumno";
+        header("location:../../?page=cpalumno");
     } elseif ($usuario->tipo_usuario_id == 2) {
         echo "hola profe";
     } elseif ($usuario->tipo_usuario_id == 3) {
