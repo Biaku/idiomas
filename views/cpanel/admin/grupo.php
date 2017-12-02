@@ -21,6 +21,8 @@
                                 <th>Aula</th>
                                 <th>Curso</th>
                                 <th>Maestro</th>
+                                <th>Horario</th>
+                                <th>Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,8 +31,9 @@
                                 echo "<tr>";
                                 echo "<td>$row[idg]</td>";
                                 echo "<td>$row[aula]</td>";
-                                echo "<td>$row[curso_idioma] $row[curso]</td>";
+                                echo "<td>$row[curso_idioma] $row[nivel_idioma]</td>";
                                 echo "<td>$row[maestro] $row[maestro_ap]</td>";
+                                echo "<td>$row[horario]</td>";
                                 echo "<td>
                                             <a href='?page=adm-grupo-editar&id=$row[idg]'>Editar</a>
                                             <a href='$row[idg]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
@@ -71,7 +74,7 @@
                                 <select name="curso" class="form-control">
                                     <?php
                                     foreach ($cursos as $row) {
-                                        echo "<option value='$row[id]'>$row[nombre] $row[descripcion]</option>";
+                                        echo "<option value='$row[id]'>$row[nombre_idioma] $row[nombre_nivel]</option>";
                                     }
                                     ?>
                                 </select>
@@ -81,6 +84,15 @@
                                     <?php
                                     foreach ($usuarios as $row) {
                                         echo "<option value='$row[id]'>$row[nombre] $row[apellidos]</option>";
+                                    }
+
+                                    ?>
+                                </select>
+                                <label for="">Horario</label>
+                                <select name="horario" id="" class="form-control">
+                                    <?php
+                                    foreach ($horarios as $row) {
+                                        echo "<option value='$row[id]'>$row[descripcion]</option>";
                                     }
 
                                     ?>
