@@ -24,5 +24,4 @@ try {
 
 }
 
-
 $pdo = null;
