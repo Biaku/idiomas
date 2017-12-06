@@ -4,7 +4,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
                     <h1 class="card-title">Iniciar sesion</h1>
@@ -28,28 +28,28 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">Registro</h1>
-                    <form>
-                        <div class="form-group">
-                            <label>Usuario</label>
-                            <input type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label>Contraseña</label>
-                            <input type="password" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label>Correo electronico</label>
-                            <input type="email" class="form-control" >
-                        </div>
-                        <a href="?page=cpprofesor" class="btn btn-primary">Registrarse</a>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!--        <div class="col-md-6">-->
+<!--            <div class="card">-->
+<!--                <div class="card-body">-->
+<!--                    <h1 class="card-title">Registro</h1>-->
+<!--                    <form>-->
+<!--                        <div class="form-group">-->
+<!--                            <label>Correo electronico</label>-->
+<!--                            <input type="email" class="form-control" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label>Contraseña</label>-->
+<!--                            <input type="password" class="form-control" name="pass1" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label>Confirmar contraseña</label>-->
+<!--                            <input type="password" class="form-control" name="pass2" required>-->
+<!--                        </div>-->
+<!--                        <a href="?page=cpprofesor" class="btn btn-primary">Registrarse</a>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
     <br>
 

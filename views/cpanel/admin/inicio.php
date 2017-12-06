@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('location:?page=login');
+}
+?>
 <?php include $templates_header ?>
     <body>
 <?php include $templates_navbar_adm ?>
