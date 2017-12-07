@@ -17,12 +17,6 @@
                             <label>Contraseña</label>
                             <input type="password" class="form-control" name="pass" required>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                                Recordarme
-                            </label>
-                        </div>
                         <input type="submit" class="btn btn-primary" value="Aceptar">
                     </form>
                 </div>
