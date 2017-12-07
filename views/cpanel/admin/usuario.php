@@ -16,6 +16,11 @@ if (!isset($_SESSION['usuario'])) {
                     <div class="card-header text-right">
                         <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo
                         </button>
+                        <a href="?page=adm-usuario&filtro=alumnos" class="btn btn-sm btn-info">Alumnos</a>
+                        <a href="?page=adm-usuario&filtro=maestros" class="btn btn-sm btn-info">Maestros</a>
+                        <a href="?page=adm-usuario&filtro=admins" class="btn btn-sm btn-info">Admins</a>
+                        <a href="?page=adm-usuario" class="btn btn-sm btn-info">Todos</a>
+
                     </div>
                     <div class="card-body">
                         <h5>Usuarios</h5>

@@ -10,7 +10,7 @@ if ($_POST) {
         $domicilio = $_POST['domicilio'];
         $tipo_user = $_POST['tipo_usuario'];
         $sql = "INSERT INTO usuario(correo,contrasena,nombre,apellidos,telefono,domicilio,tipo_usuario_id) 
-        VALUES ('$correo','$pass','$nombre','$apellidos','$tel','$domicilio','$tipo_user')";
+                VALUES ('$correo','$pass','$nombre','$apellidos','$tel','$domicilio','$tipo_user')";
         $query = $pdo->exec($sql);
         header("location:../../?page=adm-usuario");
 
@@ -20,29 +20,73 @@ if ($_POST) {
     } elseif ($_POST['tipo'] == 'borrar') {
 
 
-    } elseif ($_GET['page'] == 'adm-usuario') {
-        include 'models/Conexion.php';
-        $id = $_GET['id'];
-        $sql = "select nombre from idioma where id =$id";
-        $query = $pdo->query($sql);
-        $res = $query->fetchObject();
-
     }
 } else {
     include 'models/Conexion.php';
     $sql = "SELECT * FROM tipo_usuario";
     $tipo_alum = $pdo->query($sql);
-    $sql = "SELECT
-tipo_usuario.tipo,
-usuario.id,
-usuario.correo,
-usuario.contrasena,
-usuario.nombre,
-usuario.apellidos,
-usuario.telefono,
-usuario.domicilio
-FROM
-usuario
-INNER JOIN tipo_usuario ON usuario.tipo_usuario_id = tipo_usuario.id";
+
+    if (isset($_GET['filtro'])) {
+        if ($_GET['filtro'] == 'admins') {
+            $sql = "SELECT
+                tipo_usuario.tipo,
+                usuario.id,
+                usuario.correo,
+                usuario.contrasena,
+                usuario.nombre,
+                usuario.apellidos,
+                usuario.telefono,
+                usuario.domicilio
+                FROM
+                usuario
+                INNER JOIN tipo_usuario ON usuario.tipo_usuario_id = tipo_usuario.id
+                WHERE tipo_usuario_id=3";
+
+        } elseif ($_GET['filtro'] == 'maestros') {
+            $sql = "SELECT
+                tipo_usuario.tipo,
+                usuario.id,
+                usuario.correo,
+                usuario.contrasena,
+                usuario.nombre,
+                usuario.apellidos,
+                usuario.telefono,
+                usuario.domicilio
+                FROM
+                usuario
+                INNER JOIN tipo_usuario ON usuario.tipo_usuario_id = tipo_usuario.id
+                WHERE tipo_usuario_id=2";
+
+        } elseif ($_GET['filtro'] == 'alumnos') {
+            $sql = "SELECT
+                tipo_usuario.tipo,
+                usuario.id,
+                usuario.correo,
+                usuario.contrasena,
+                usuario.nombre,
+                usuario.apellidos,
+                usuario.telefono,
+                usuario.domicilio
+                FROM
+                usuario
+                INNER JOIN tipo_usuario ON usuario.tipo_usuario_id = tipo_usuario.id
+                WHERE tipo_usuario_id=1";
+
+        }
+
+    } else {
+        $sql = "SELECT
+                tipo_usuario.tipo,
+                usuario.id,
+                usuario.correo,
+                usuario.contrasena,
+                usuario.nombre,
+                usuario.apellidos,
+                usuario.telefono,
+                usuario.domicilio
+                FROM
+                usuario
+                INNER JOIN tipo_usuario ON usuario.tipo_usuario_id = tipo_usuario.id";
+    }
     $usuarios = $pdo->query($sql);
 }

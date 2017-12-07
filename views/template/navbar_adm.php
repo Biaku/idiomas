@@ -35,7 +35,7 @@
                 </div>
             </li>
         </ul>
-        <span class="navbar-text">Bienvenido Administrador</span>
+        <span class="navbar-text">Bienvenido <?= $_SESSION['usuario']->nombre ?></span>
         <a href="controllers/admin/logoutController.php" class="btn btn-danger ml-2">Salir</a>
     </div>
 </nav>
