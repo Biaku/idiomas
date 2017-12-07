@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('location:?page=login');
+}
+?>
 <?php require_once 'controllers/admin/horarioController.php' ?>
 <?php include $templates_header ?>
     <body>

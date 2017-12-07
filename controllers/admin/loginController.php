@@ -5,21 +5,25 @@ $pass = $_POST['pass'];
 
 
 try {
+    session_start();
     $sql = "SELECT * FROM usuario WHERE correo='$email' and contrasena = '$pass'";
     $query = $pdo->query($sql);
-    $usuario = $query->fetchObject();
+    if ($usuario = $query->fetchObject()) {
 
-    session_start();
-    $_SESSION['usuario'] = $usuario;
-    var_dump($_SESSION['usuario']);
+        $_SESSION['usuario'] = $usuario;
 
-    if ($usuario->tipo_usuario_id == 1) {
-        header("location:../../?page=cpalumno");
-    } elseif ($usuario->tipo_usuario_id == 2) {
-        echo "hola profe";
-    } elseif ($usuario->tipo_usuario_id == 3) {
-        header("location:../../?page=adm-inicio");
+        if ($usuario->tipo_usuario_id == 1) {
+            header("location:../../?page=cpalumno");
+        } elseif ($usuario->tipo_usuario_id == 2) {
+            echo "hola profe";
+        } elseif ($usuario->tipo_usuario_id == 3) {
+            header("location:../../?page=adm-inicio");
+        }
+    } else {
+        $_SESSION['error'] = true;
+        header('location:../../?page=login');
     }
+
 } catch (Exception $e) {
 
 }

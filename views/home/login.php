@@ -11,7 +11,7 @@
                     <form action="controllers/admin/loginController.php" method="post">
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" name="email" required>
+                            <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
@@ -20,33 +20,19 @@
                         <input type="submit" class="btn btn-primary" value="Aceptar">
                     </form>
                 </div>
+                <div class="card-footer">
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['error']) && $_SESSION['error']) {
+                        echo "<h1 style='color: crimson'>Credenciales incorrectas</h1>";
+                        session_destroy();
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-<!--        <div class="col-md-6">-->
-<!--            <div class="card">-->
-<!--                <div class="card-body">-->
-<!--                    <h1 class="card-title">Registro</h1>-->
-<!--                    <form>-->
-<!--                        <div class="form-group">-->
-<!--                            <label>Correo electronico</label>-->
-<!--                            <input type="email" class="form-control" required>-->
-<!--                        </div>-->
-<!--                        <div class="form-group">-->
-<!--                            <label>Contraseña</label>-->
-<!--                            <input type="password" class="form-control" name="pass1" required>-->
-<!--                        </div>-->
-<!--                        <div class="form-group">-->
-<!--                            <label>Confirmar contraseña</label>-->
-<!--                            <input type="password" class="form-control" name="pass2" required>-->
-<!--                        </div>-->
-<!--                        <a href="?page=cpprofesor" class="btn btn-primary">Registrarse</a>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
     <br>
-
     <footer>
         <p>Instituto de Idiomas de México 2017</p>
     </footer>
