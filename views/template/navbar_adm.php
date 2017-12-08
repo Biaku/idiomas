@@ -34,6 +34,9 @@
 
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?page=adm-inscripcion">Inscripciones</a>
+            </li>
         </ul>
         <span class="navbar-text">Bienvenido <?= $_SESSION['usuario']->nombre ?></span>
         <a href="controllers/admin/logoutController.php" class="btn btn-danger ml-2">Salir</a>

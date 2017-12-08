@@ -66,6 +66,9 @@ if (isset($_GET["page"])) {
         case 'adm-tipo-usuario':
             include 'views/cpanel/admin/tipo_usuario.php';
             break;
+        case 'adm-inscripcion':
+            include 'views/cpanel/admin/inscripciones.php';
+            break;
     }
 } else {
     include 'views/home/inicio.php';
