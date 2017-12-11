@@ -1,27 +1,23 @@
-<?php
-session_start();
+<?php session_start();
 include_once 'models/Conexion.php';
 $id = $_SESSION['usuario']->id;
-
 $sql = "SELECT
-        idioma.nombre AS nombre_idioma,
-        nivel.nombre AS nivel_idioma,
-        usuario.apellidos AS profe_ap,
-        usuario.nombre AS profe_nombre,
-        horario.descripcion AS horario,
-        aula.nombre as nombre_aula
-        FROM
-        grupo_alumno
-        INNER JOIN grupo ON grupo_alumno.grupo_id = grupo.id
-        INNER JOIN curso ON grupo.curso_id = curso.id
-        INNER JOIN idioma ON curso.idioma_id = idioma.id
-        INNER JOIN nivel ON curso.nivel_id = nivel.id
-        INNER JOIN usuario ON grupo.maestro_id = usuario.id
-        INNER JOIN horario ON grupo.horario_id = horario.id
-        INNER JOIN aula ON grupo.aula_id = aula.id
-        WHERE usuario_id = $id";
-
-$cursos = $pdo->query($sql);
+            aula.nombre AS aula,
+            idioma.nombre AS curso_idioma,
+            usuario.nombre AS maestro,
+            usuario.apellidos AS maestro_ap,
+            grupo.id AS idg,
+            horario.descripcion AS horario,
+            nivel.nombre AS nivel_idioma
+            FROM
+            grupo
+            INNER JOIN aula ON grupo.aula_id = aula.id
+            INNER JOIN curso ON grupo.curso_id = curso.id
+            INNER JOIN idioma ON curso.idioma_id = idioma.id
+            INNER JOIN usuario ON grupo.maestro_id = usuario.id
+            INNER JOIN horario ON grupo.horario_id = horario.id ,
+            nivel WHERE maestro_id = $id";
+    $grupos = $pdo->query($sql);
 
 ?>
 <?php include $templates_header_cp ?>
@@ -33,7 +29,7 @@ $cursos = $pdo->query($sql);
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h1>Alumno: <?= $_SESSION['usuario']->nombre . " " . $_SESSION['usuario']->apellidos ?></h1>
+                    <h1>Profesor: <?= $_SESSION['usuario']->nombre ." ". $_SESSION['usuario']->apellidos ?></h1>
                     <div class="media">
                         <img class="d-flex mr-3"
                              src="https://image.freepik.com/iconos-gratis/nerd-perfil-masculino-avatar_318-68813.jpg"
@@ -45,24 +41,27 @@ $cursos = $pdo->query($sql);
                             <p><?= $_SESSION['usuario']->correo ?></p>
                         </div>
                     </div>
-                    <hr>
-                    <table class="table table-bordered table-hover">
-                        <thead class="thead-default">
+                    <h4>Grupos asignados</h4>
+                    <table class="table">
+                        <thead>
                         <tr>
-                            <th>Curso</th>
-                            <th>Profesor</th>
+                            <th>ID</th>
                             <th>Aula</th>
-                            <th>Hora</th>
+                            <th>Curso</th>
+                            <th>Horario</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        foreach ($cursos as $row) {
+                        foreach ($grupos as $row) {
                             echo "<tr>";
-                            echo "<td>$row[nombre_idioma] $row[nivel_idioma]</td>";
-                            echo "<td>$row[profe_nombre] $row[profe_ap]</td>";
-                            echo "<td>$row[nombre_aula]</td>";
+                            echo "<td>$row[idg]</td>";
+                            echo "<td>$row[aula]</td>";
+                            echo "<td>$row[curso_idioma] $row[nivel_idioma]</td>";
                             echo "<td>$row[horario]</td>";
+                            echo "<td><a href='?page=lista_alumnos&idg=$row[idg]'>Ver lista de alumnos</a></td>";
+                            echo "</tr>";
                         }
                         ?>
                         </tbody>

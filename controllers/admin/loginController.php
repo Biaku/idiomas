@@ -15,7 +15,7 @@ try {
         if ($usuario->tipo_usuario_id == 1) {
             header("location:../../?page=cpalumno");
         } elseif ($usuario->tipo_usuario_id == 2) {
-            echo "hola profe";
+            header("location:../../?page=cpprofesor");
         } elseif ($usuario->tipo_usuario_id == 3) {
             header("location:../../?page=adm-inicio");
         }

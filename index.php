@@ -69,6 +69,12 @@ if (isset($_GET["page"])) {
         case 'adm-inscripcion':
             include 'views/cpanel/admin/inscripciones.php';
             break;
+        case 'cpprofesor':
+            include 'views/cpanel/profesores/profesor.php';
+            break;
+        case 'lista_alumnos':
+            include 'controllers/listaAlumnosController.php';
+            break;
     }
 } else {
     include 'views/home/inicio.php';

@@ -89,15 +89,9 @@ if ($_POST) {
             INNER JOIN idioma ON curso.idioma_id = idioma.id
             INNER JOIN usuario ON grupo.maestro_id = usuario.id
             INNER JOIN horario ON grupo.horario_id = horario.id ,
-            nivel
-            ";
+            nivel";
     $grupos = $pdo->query($sql);
 
     $sql = "SELECT * FROM horario";
     $horarios = $pdo->query($sql);
 }
-
-
-
-
-
