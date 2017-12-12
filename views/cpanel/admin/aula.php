@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 ?>
 <?php require_once 'controllers/admin/aulaController.php' ?>
 <?php include $templates_header ?>
-    <body ng-app="admin">
+    <body>
 <?php include $templates_navbar_adm ?>
     <br>
     <div class="container">
@@ -34,8 +34,8 @@ if (!isset($_SESSION['usuario'])) {
                                 echo "<td>$row[id]</td>";
                                 echo "<td>$row[nombre]</td>";
                                 echo "<td>
-                                            <a href='?page=adm-aula-editar&id=$row[id]'>Editar</a>
-                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                            <a href='?page=adm-aula-editar&id=$row[id]'>Editar</a>                                            
+                                            <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
                                           </td>";
                                 echo "</tr>";
                             }
@@ -48,6 +48,8 @@ if (!isset($_SESSION['usuario'])) {
             </div>
         </div>
         <br>
+        <!-- =============================================================================================== -->
+        <!-- =========================== MODAL AGREGAR AULA ================================================ -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -62,7 +64,7 @@ if (!isset($_SESSION['usuario'])) {
                         <form action="controllers/admin/aulaController.php" method="post" id="form">
                             <div class="form-group">
                                 <label>Descripcion</label>
-                                <input type="text" class="form-control" name="desc">
+                                <input type="text" class="form-control" name="desc" required>
                                 <input type="hidden" name="tipo" value="registro">
                             </div>
                         </form>
@@ -74,7 +76,8 @@ if (!isset($_SESSION['usuario'])) {
                 </div>
             </div>
         </div>
-        <!-- borrar -->
+        <!-- =============================================================================================== -->
+        <!-- =========================== MODAL BORRAR AULA ================================================ -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -89,7 +92,7 @@ if (!isset($_SESSION['usuario'])) {
                         <form action="controllers/admin/aulaController.php" method="post" id="form2">
                             <div class="form-group">
                                 <h3 class="text-danger">¿Estas seguro de borrar esta aula?</h3>
-                                <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                                <input id="inpborrar" type="hidden" name="aula">
                                 <input type="hidden" name="tipo" value="borrar">
                             </div>
                         </form>
