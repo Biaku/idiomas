@@ -11,7 +11,10 @@ if ($_POST) {
 
 
     } elseif ($_POST['tipo'] == 'borrar') {
-
+        $aula = $_POST['aula'];
+        $sql = "DELETE FROM tipo_usuario WHERE id = $aula";
+        $query = $pdo->exec($sql);
+        header("location:../../?page=adm-tipo-usuario");
 
     } elseif ($_GET['page'] == 'adm-usuario') {
         include 'models/Conexion.php';

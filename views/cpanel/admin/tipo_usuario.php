@@ -35,7 +35,7 @@ if (!isset($_SESSION['usuario'])) {
                                 echo "<td>$row[tipo]</td>";
                                 echo "<td>
                                             <a href='?page=adm-tipo-usuario-editar&id=$row[id]'>Editar</a>
-                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                            <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
                                           </td>";
                                 echo "</tr>";
                             }
@@ -86,10 +86,10 @@ if (!isset($_SESSION['usuario'])) {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="controllers/admin/aulaController.php" method="post" id="form2">
+                        <form action="controllers/admin/usuarioTipoController.php" method="post" id="form2">
                             <div class="form-group">
                                 <h3 class="text-danger">¿Estas seguro de borrar esta aula?</h3>
-                                <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                                <input id="inpborrar" type="hidden" name="aula">
                                 <input type="hidden" name="tipo" value="borrar">
                             </div>
                         </form>
