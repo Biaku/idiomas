@@ -39,12 +39,16 @@ if (!isset($_SESSION['usuario'])) {
                             echo "<tr>";
                             echo "<td>$row[id]</td>";
                             echo "<td>$row[capacidad]</td>";
-                            echo "<td>$row[esta_abierto]</td>";
+                            if ($row['esta_abierto'] == 1) {
+                                echo "<td>Abierto</td>";
+                            } else {
+                                echo "<td>Cerrado</td>";
+                            }
                             echo "<td>$row[nombre_idioma]</td>";
                             echo "<td>$row[nombre_nivel]</td>";
                             echo "<td>
                                             <a href='?page=adm-curso-editar&id=$row[id]'>Editar</a>
-                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                            <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
                                           </td>";
                             echo "</tr>";
                         }
@@ -123,7 +127,7 @@ if (!isset($_SESSION['usuario'])) {
                     <form action="controllers/admin/cursoController.php" method="post" id="form2">
                         <div class="form-group">
                             <h3 class="text-danger">¿Estas seguro de borrar este curso?</h3>
-                            <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                            <input id="inpborrar" type="hidden" name="aula">
                             <input type="hidden" name="tipo" value="borrar">
                         </div>
                     </form>

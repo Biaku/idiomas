@@ -44,7 +44,7 @@ if (!isset($_SESSION['usuario'])) {
                                 echo "<td>$row[tipo]</td>";
                                 echo "<td>
                                             <a href='?page=adm-usuario-editar&id=$row[id]'>Editar</a>
-                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
+                                            <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
                                           </td>";
                                 echo "</tr>";
                             }
@@ -71,7 +71,6 @@ if (!isset($_SESSION['usuario'])) {
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" class="form-control" name="nombre">
-
                             </div>
                             <div class="form-group">
                                 <label>Apellidos</label>
@@ -123,16 +122,16 @@ if (!isset($_SESSION['usuario'])) {
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Borrar Aula</h5>
+                        <h5 class="modal-title" id="deleteModalLabel">Borrar Usuario</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="controllers/admin/aulaController.php" method="post" id="form2">
+                        <form action="controllers/admin/usuarioController.php" method="post" id="form2">
                             <div class="form-group">
-                                <h3 class="text-danger">¿Estas seguro de borrar esta aula?</h3>
-                                <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                                <h3 class="text-danger">¿Estas seguro de borrar este usuario?</h3>
+                                <input id="inpborrar" type="hidden" name="aula">
                                 <input type="hidden" name="tipo" value="borrar">
                             </div>
                         </form>

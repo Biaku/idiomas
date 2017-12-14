@@ -36,10 +36,10 @@ if (!isset($_SESSION['usuario'])) {
                             foreach ($grupos as $row) {
                                 echo "<tr>";
                                 echo "<td>$row[idg]</td>";
-                                echo "<td>$row[aula]</td>";
-                                echo "<td>$row[curso_idioma] $row[nivel_idioma]</td>";
-                                echo "<td>$row[maestro] $row[maestro_ap]</td>";
-                                echo "<td>$row[horario]</td>";
+                                echo "<td>$row[nombre_aula]</td>";
+                                echo "<td>$row[nombre_idioma] $row[nombre_nivel]</td>";
+                                echo "<td>$row[nombre_maestro] $row[ap_maestro]</td>";
+                                echo "<td>$row[nombre_horario]</td>";
                                 echo "<td>
                                             <a href='?page=adm-grupo-editar&id=$row[idg]'>Editar</a>
                                             <a href='$row[idg]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>

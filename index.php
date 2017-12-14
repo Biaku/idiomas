@@ -63,6 +63,9 @@ if (isset($_GET["page"])) {
         case 'adm-usuario':
             include 'views/cpanel/admin/usuario.php';
             break;
+        case 'adm-usuario-editar':
+            include 'views/cpanel/admin/usuario_editar.php';
+            break;
         case 'adm-tipo-usuario':
             include 'views/cpanel/admin/tipo_usuario.php';
             break;

@@ -37,8 +37,8 @@ if (!isset($_SESSION['usuario'])) {
                                 echo "<td>$row[nombre]</td>";
                                 echo "<td>
                                             <a href='?page=adm-idioma-editar&id=$row[id]'>Editar</a>
-                                            <a href='#' data-toggle='modal' data-target='#deleteModal'>Borrar</a>
-                                          </td>";
+                                            <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
+                                      </td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['usuario'])) {
                         <form action="controllers/admin/idiomaController.php" method="post" id="form2">
                             <div class="form-group">
                                 <h3 class="text-danger">¿Estas seguro de borrar este idioma?</h3>
-                                <input type="hidden" name="aula" value=<?= $row['id'] ?>>
+                                <input id="inpborrar" type="hidden" name="aula">
                                 <input type="hidden" name="tipo" value="borrar">
                             </div>
                         </form>

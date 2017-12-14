@@ -4,15 +4,26 @@ if ($_POST) {
     $descripcion = $_POST['desc'];
     $capacidad = $_POST['capacidad'];
     $idioma = $_POST['idioma'];
-    $estatus = $_POST['estatus'];
+
 
     if ($_POST['tipo'] == 'registro') {
+        if(isset($_POST['estatus'])){
+            $estatus = 1;
+        }else{
+            $estatus = 0;
+        }
+
         $sql = "INSERT INTO curso(capacidad,esta_abierto,nivel_id,idioma_id) 
-                VALUES ('$capacidad', '$estatus','$descripcion','$idioma')";
+                VALUES ('$capacidad', $estatus,'$descripcion','$idioma')";
         $query = $pdo->exec($sql);
         header("location:../../?page=adm-curso");
 
     } elseif ($_POST['tipo'] == 'actualizar') {
+        if(isset($_POST['estatus'])){
+            $estatus = 1;
+        }else{
+            $estatus = 0;
+        }
         $aula = $_POST['aula'];
         $sql = "UPDATE curso 
                 SET 
