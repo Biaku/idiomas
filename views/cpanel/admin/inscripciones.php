@@ -18,7 +18,7 @@ if (!isset($_SESSION['usuario'])) {
                         </button>
                     </div>
                     <div class="card-body">
-                        <h5>Aulas</h5>
+                        <h5>Inscripciones</h5>
                         <table class="table" ng-controller="aulaController">
                             <thead>
                             <tr>
@@ -37,7 +37,7 @@ if (!isset($_SESSION['usuario'])) {
                                 echo "<td>$row[nombre_idioma] $row[nombre_nivel]</td>";
 
                                 echo "<td>
-                                            <a href='?page=adm-grupo-editar&id=$row[id]'>Editar</a>
+                                            <a href='?page=adm-inscripcion-editar&id=$row[id]'>Editar</a>
                                             <a href='$row[id]' data-toggle='modal' data-target='#deleteModal' class='linkborrar'>Borrar</a>
                                           </td>";
                                 echo "</tr>";
@@ -90,6 +90,34 @@ if (!isset($_SESSION['usuario'])) {
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-primary" form="form">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =============================================================================================== -->
+        <!-- =========================== MODAL BORRAR AULA ================================================ -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Borrar Aula</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="controllers/admin/inscripcionController.php" method="post" id="form2">
+                            <div class="form-group">
+                                <h3 class="text-danger">¿Estas seguro de borra esta inscripcion?</h3>
+                                <input id="inpborrar" type="hidden" name="aula">
+                                <input type="hidden" name="tipo" value="borrar">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger" form="form2">Aceptar</button>
                     </div>
                 </div>
             </div>

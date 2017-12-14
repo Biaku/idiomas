@@ -75,6 +75,9 @@ if (isset($_GET["page"])) {
         case 'adm-inscripcion':
             include 'views/cpanel/admin/inscripciones.php';
             break;
+        case 'adm-inscripcion-editar':
+            include 'views/cpanel/admin/inscripciones_editar.php';
+            break;
         case 'cpprofesor':
             include 'views/cpanel/profesores/profesor.php';
             break;
