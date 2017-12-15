@@ -80,7 +80,7 @@ if (!isset($_SESSION['usuario'])) {
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Borrar Aula</h5>
+                        <h5 class="modal-title" id="deleteModalLabel">Borrar Tipo de Usuario</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['usuario'])) {
                     <div class="modal-body">
                         <form action="controllers/admin/usuarioTipoController.php" method="post" id="form2">
                             <div class="form-group">
-                                <h3 class="text-danger">¿Estas seguro de borrar esta aula?</h3>
+                                <h3 class="text-danger">¿Estas seguro de borrar este tipo de usuario?</h3>
                                 <input id="inpborrar" type="hidden" name="aula">
                                 <input type="hidden" name="tipo" value="borrar">
                             </div>
