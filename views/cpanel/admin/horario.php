@@ -98,8 +98,7 @@ if (!isset($_SESSION['usuario'])) {
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="profesor.php">Ver profesor</a>
+        </div>        
     </div>
 
 <?php include $templates_footer_adm ?>

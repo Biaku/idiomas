@@ -101,6 +101,9 @@ if (!isset($_SESSION['usuario'])) {
                 </div>
             </div>
         </div>
+        <br>
+        <a href="idiomas_pdf.php">Lista de Idiomas</a>
+        <br>
 <h2><center>Grafica de Alumnos por idioma</center></h2>
 <center><div id="canvas-holder" style="width:65%">
         <canvas id="chart-area" />
